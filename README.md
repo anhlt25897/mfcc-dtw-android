@@ -32,6 +32,17 @@
             });
             dispatcher.run();
 
+# Trích xuất mfcc.
+
+          .audioBufferSize: buffersize của đoạn ghi âm setup trong recorder
+          .sampleRate: sample rate của đoạn ghi âm setup trong recorder
+          .amountOfCepstrumCoef: Số đặc trưng mfcc muốn lấy.
+          .amountOfMelFilters: Số băng lọc mel
+          .lowerFilterFreq: Tần số nhỏ nhất giọng nói của người(thường là 300)
+          .upperFilterFreq: Tần số lớn nhất giọng nói của người(thường là 8000)
+          
+          MFCC mfcc = new MFCC(a[0].getBufferSize(), mSampleRate, 39, 40, 300, 8000);
+          boolean isSuccess = mfcc.process(a[0]);
    
 # 2. Tính độ chênh lệch giữa 2 đoạn âm thanh(sử dụng kết quả mfcc).
         
