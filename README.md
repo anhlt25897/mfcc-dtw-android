@@ -2,13 +2,14 @@
 1. Trích xuất đặc trưng mfcc của đoạn âm thanh.
     - MFCC được trích xuất trực tiếp từ recorder(trong quá trình ghi âm).
     Danh sách tham số:
-    .sampleRate: sample rate của đoạn ghi âm setup trong recorder
-    .audioBufferSize: buffersize của đoạn ghi âm setup trong recorder
-    .sampleSizeInBits: Bit per second, số bít trên 1 sample được setup trong recorder
-    .bufferOverlap: số tín hiệu chồng lên nhau(frameshift).
-    .recorder: recorder do mình tạo ra làm nhiệm vụ ghi âm.
-    .channel: số kênh (mono(1), sereo(2))
-    .bufferCallback: callback mỗi lần lấy mẫu để ghi tín hiệu xuống file.
+    
+            .sampleRate: sample rate của đoạn ghi âm setup trong recorder
+            .audioBufferSize: buffersize của đoạn ghi âm setup trong recorder
+            .sampleSizeInBits: Bit per second, số bít trên 1 sample được setup trong recorder
+            .bufferOverlap: số tín hiệu chồng lên nhau(frameshift).
+            .recorder: recorder do mình tạo ra làm nhiệm vụ ghi âm.
+            .channel: số kênh (mono(1), sereo(2))
+            .bufferCallback: callback mỗi lần lấy mẫu để ghi tín hiệu xuống file.
     
 
             dispatcher = AudioDispatcherFactory.fromMic(RECORDER_SAMPLERATE, RECORDER_BUFFER_SIZE, RECORDER_BPP,
