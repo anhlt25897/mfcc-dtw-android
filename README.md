@@ -1,6 +1,6 @@
 # 1. Trích xuất đặc trưng mfcc của đoạn âm thanh.
-MFCC được trích xuất trực tiếp từ recorder(trong quá trình ghi âm). Danh sách tham số:
-    
+MFCC được trích xuất trực tiếp từ recorder(trong quá trình ghi âm). 
+            Danh sách tham số:
             .sampleRate: sample rate của đoạn ghi âm setup trong recorder
             .audioBufferSize: buffersize của đoạn ghi âm setup trong recorder
             .sampleSizeInBits: Bit per second, số bit trên 1 sample được setup trong recorder
