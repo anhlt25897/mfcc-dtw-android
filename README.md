@@ -41,3 +41,26 @@
             //tính khoảng chênh lệch mfcc giữa 2 tín hiệu đọc được từ file
             DTW dtw = DTW.getInstance();
             double distance = dtw.process(result, des).getDistance();
+
+# 3. Thay đổi trong thư viện dsp.(Vấn đề: thư viện dsp không lưu được file khi trích xuất mfcc realtime)
+            while (!stopped && !endOfStream && totalBytesRead < bytesToRead) {
+                try {
+                    bytesRead = audioInputStream.read(audioByteBuffer, offsetInBytes + totalBytesRead, bytesToRead - totalBytesRead);
+                    //gọi ra ngoài để recorder có thể ghi xuống file.
+               --->     mBufferCallback.writeBuffer(audioByteBuffer);
+                } catch (IndexOutOfBoundsException e) {
+                    // The pipe decoder generates an out of bounds if end
+                    // of stream is reached. Ugly hack...
+                    bytesRead = -1;
+                }
+                if (bytesRead == -1) {
+                    // The end of the stream is reached if the number of bytes read during this iteration equals -1
+                    endOfStream = true;
+                } else {
+                    // Otherwise add the number of bytes read to the total
+                    totalBytesRead += bytesRead;
+                }
+            }
+            
+            //báo ra ngoài khi kết thúc việc lấy mẫu để phân tích(cũng là lúc ngừng ghi âm)
+            ---> mBufferCallback.onDone();
