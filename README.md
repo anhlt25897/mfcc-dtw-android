@@ -1,5 +1,5 @@
 # mfcc-dtw-android
-1. Trích xuất đặc trưng mfcc của đoạn âm thanh.
+#1. Trích xuất đặc trưng mfcc của đoạn âm thanh.
     - MFCC được trích xuất trực tiếp từ recorder(trong quá trình ghi âm).
     Danh sách tham số:
     
@@ -35,7 +35,7 @@
             dispatcher.run();
 
     
-2. Tính độ chênh lệch giữa 2 đoạn âm thanh(sử dụng kết quả mfcc).
+#2. Tính độ chênh lệch giữa 2 đoạn âm thanh(sử dụng kết quả mfcc).
         
             //Đọc 2 file có chứa dữ liệu trích xuất mfcc
             List<double[]> result = FileHelper.ReadFile("data.txt", 39);
