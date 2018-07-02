@@ -42,7 +42,7 @@
             DTW dtw = DTW.getInstance();
             double distance = dtw.process(result, des).getDistance();
 
-# 3. Thay đổi trong thư viện dsp.(Vấn đề: thư viện dsp không lưu được file khi trích xuất mfcc realtime)
+# 3. Thay đổi trong thư viện dsp.(Giải quyết vấn đề: thư viện dsp không lưu được file khi trích xuất mfcc realtime)
             while (!stopped && !endOfStream && totalBytesRead < bytesToRead) {
                 try {
                     bytesRead = audioInputStream.read(audioByteBuffer, offsetInBytes + totalBytesRead, bytesToRead - totalBytesRead);
