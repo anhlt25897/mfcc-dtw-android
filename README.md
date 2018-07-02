@@ -5,7 +5,7 @@
     
             .sampleRate: sample rate của đoạn ghi âm setup trong recorder
             .audioBufferSize: buffersize của đoạn ghi âm setup trong recorder
-            .sampleSizeInBits: Bit per second, số bít trên 1 sample được setup trong recorder
+            .sampleSizeInBits: Bit per second, số bit trên 1 sample được setup trong recorder
             .bufferOverlap: số tín hiệu chồng lên nhau(frameshift).
             .recorder: recorder do mình tạo ra làm nhiệm vụ ghi âm.
             .channel: số kênh (mono(1), sereo(2))
